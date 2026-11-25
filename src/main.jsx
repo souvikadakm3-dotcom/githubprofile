@@ -6,7 +6,9 @@ import Layout from './Layout.jsx'
 import Home from './component/Home/Home.jsx'
 import About from './component/About/About.jsx'
 import Contact from './component/Contact/Contact.jsx'
-import User from './component/User/User.jsx'
+// import User from './component/User/User.jsx'
+import Github, { githubinfoloader } from './component/Github/Github.jsx'
+// thubinfoloader from './component/Github/Github.jsx'
 const router= createBrowserRouter([
   {
     path:'/',
@@ -23,9 +25,14 @@ const router= createBrowserRouter([
       path:"contact",
       element:<Contact/>
     },
+    // {
+    //   path:"user/:userid",
+    //   element:<User/>
+    // },
     {
-      path:"user/:userid",
-      element:<User/>
+      loader:githubinfoloader,
+      path:"github",
+      element:<Github/>
     }
   ]
   }
